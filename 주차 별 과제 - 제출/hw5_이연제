@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> 5주차 스터디 - 이연제</title>
+</head>
+<body>
+    <div class="title">
+        <h1>숫자 -> 한글</h1>
+    </div>
+    <div class="korean">
+        <h3>결과 표시창</h3>
+    </div>
+    <div class="number">
+        <input type="text">
+    </div>
+    <div class="button">
+        <button onclick="koreanToNumber()">변경</button>
+    </div>
+
+    <script>
+        function koreanToNumber() {
+            let number = document.querySelector('input[type="text"]').value;
+            let result = '';
+
+            const koreanNumbers = ['영', '일', '이', '삼', '사', '오', '육', '칠', '팔', '구'];
+
+            for (let i = 0; i < number.length; i++) {
+                let index = parseInt(number.charAt(i));
+                result += koreanNumbers[index];
+            }
+
+            document.querySelector('.korean h3').textContent = result;
+        }
+    </script>
+</body>
+
+</html>
